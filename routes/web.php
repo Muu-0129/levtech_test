@@ -24,6 +24,6 @@ Route::get('/posts', 'PostController@index');   #lesson_8-1
 */
 
 Route::get('/', 'PostController@index');         #7-3-2
-
+Route::get('/posts/{post}', 'PostController@show'); 
 
 ?>
