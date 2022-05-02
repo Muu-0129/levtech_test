@@ -23,7 +23,10 @@ Route::get('/',function() {
 Route::get('/posts', 'PostController@index');   #lesson_8-1
 */
 
-Route::get('/', 'PostController@index');         #7-3-2
-Route::get('/posts/{post}', 'PostController@show'); 
+Route::get('/', 'PostController@index');    #7-3-2
+Route::get('/posts/create', 'PostController@create');  
+Route::get('/posts/{post}', 'PostController@show');
+
+Route::post('/posts', 'PostController@store');
 
 ?>
