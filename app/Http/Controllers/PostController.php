@@ -39,4 +39,27 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
         
     }
+    
+    public function edit(Post $post)
+    {
+        return view('edit')->with(['post' => $post]);
+    }
+    
+    public function update(PostRequest $request, Post $post)    //public:アクセス制限 function:関数の前に書く update:関数 
+                                                                //PostRequest $request:クラスをインスタンス化
+    {
+        $input = $request['post'];  //$input:変数
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
+    /*
+    public function update(PostRequest $request)    //上のと同じ
+    {
+        $post = new Post;       //Postクラスを$postにインスタンス化
+        $input = $request['post'];  //$input:変数
+        $post->fill($input)->save();
+        return redirect('/posts/' . $post->id);
+    }
+    
+    */
 }
