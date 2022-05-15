@@ -33,3 +33,6 @@ Route::get('/posts/{post}', 'PostController@show');
 Route::post('/posts', 'PostController@store');
 
 ?>
+<!--Auth::routes();-->
+
+<!--Route::get('/home', 'HomeController@index')->name('home');-->
